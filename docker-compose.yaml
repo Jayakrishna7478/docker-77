@@ -41,17 +41,17 @@ volumes:
 services:
   # docker run -d --name mongodb --network=roboshop mongodb:1
   mongodb:
-    image: mongodb:v1
+    image: mongodb:v7
     container_name: mongodb
     volumes:
     - source: mongodb
       target: /data/db
       type: volume
-      networks:
-      - roboshop
+    networks:
+    - roboshop
 
   catalogue:
-    image: catalogue:v1
+    image: catalogue:v7
     container_name: catalogue
     networks:
     - roboshop
@@ -59,7 +59,7 @@ services:
     - mongodb
 
   web:
-    image: web:v1
+    image: web:v7
     container_name: web
     ports:
     - "80:80"
