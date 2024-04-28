@@ -47,8 +47,8 @@ services:
     - source: mongodb
       target: /data/db
       type: volume
-    networks:
-    - roboshop
+      networks:
+      - roboshop
 
   catalogue:
     image: catalogue:v1
